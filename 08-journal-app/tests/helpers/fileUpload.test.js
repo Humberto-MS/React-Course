@@ -1,10 +1,16 @@
-import { fileUpload } from "../../src/helpers";
+import { fileUpload, getEnvironments } from "../../src/helpers";
 import { v2 as cloudinary } from 'cloudinary';
 
+const {
+    VITE_CLOUD_NAME,
+    VITE_API_KEY,
+    VITE_API_SECRET
+} = getEnvironments();
+
 cloudinary.config ( {
-    cloud_name: 'dbwufzdp6',
-    api_key: '712463694295745',
-    api_secret: 'pDzipZAP5gF9psEQ3fX1HTqv7WQ',
+    cloud_name: VITE_CLOUD_NAME,
+    api_key: VITE_API_KEY,
+    api_secret: VITE_API_SECRET,
     secure: true
 } );
 
